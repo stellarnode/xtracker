@@ -16,21 +16,65 @@
 		073819111D8720970003D155 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073819101D8720970003D155 /* CoreDataHelper.swift */; };
 		073A40971D91AB7A007325B5 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A40961D91AB7A007325B5 /* Categories.swift */; };
 		073A40991D91BD47007325B5 /* testTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A40981D91BD47007325B5 /* testTableViewController.swift */; };
-		073A409C1D91BEED007325B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 073A409A1D91BEED007325B5 /* Main.storyboard */; };
 		075CD1991D969F79004B2A62 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1981D969F79004B2A62 /* Currency.swift */; };
 		075CD19B1D96B166004B2A62 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD19A1D96B166004B2A62 /* WelcomeViewController.swift */; };
+		075CD19D1D97CD92004B2A62 /* EditEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD19C1D97CD92004B2A62 /* EditEntryViewController.swift */; };
+		075CD19F1D97D61F004B2A62 /* SelectCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD19E1D97D61F004B2A62 /* SelectCurrencyViewController.swift */; };
+		075CD1A11D9813CC004B2A62 /* SelectDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1A01D9813CC004B2A62 /* SelectDateViewController.swift */; };
+		075CD1A31D9827AD004B2A62 /* DatesCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */; };
+		075CD1A51D9986EC004B2A62 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1A41D9986EC004B2A62 /* GraphView.swift */; };
+		075CD1AD1D999FEF004B2A62 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1AC1D999FEF004B2A62 /* StatisticsViewController.swift */; };
+		075CD1B21D99A3EE004B2A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075CD1B11D99A3EE004B2A62 /* Main.storyboard */; };
+		075CD1B61D9AE631004B2A62 /* PieChartViewMine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1B51D9AE631004B2A62 /* PieChartViewMine.swift */; };
+		075CD1B81D9D9A48004B2A62 /* TestChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1B71D9D9A48004B2A62 /* TestChartViewController.swift */; };
+		075CD1C11DA6CA0C004B2A62 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075CD1C01DA6CA0C004B2A62 /* NotificationCenter.framework */; };
+		075CD1C41DA6CA0C004B2A62 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1C31DA6CA0C004B2A62 /* TodayViewController.swift */; };
+		075CD1C71DA6CA0C004B2A62 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 075CD1C51DA6CA0C004B2A62 /* MainInterface.storyboard */; };
+		075CD1CB1DA6CA0C004B2A62 /* TcehWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 075CD1BF1DA6CA0C004B2A62 /* TcehWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		075CD1D01DA6CC90004B2A62 /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738183D1D8093790003D155 /* EntryCell.swift */; };
+		075CD1D11DA6CDA3004B2A62 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738183B1D808F7E0003D155 /* Entry.swift */; };
+		075CD1D21DA6CDA8004B2A62 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0738190D1D871D330003D155 /* Model.xcdatamodeld */; };
+		075CD1D31DA6CDB4004B2A62 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073819101D8720970003D155 /* CoreDataHelper.swift */; };
+		075CD1D41DA6CDB8004B2A62 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712D33E1D8B2D5A00849704 /* Venue.swift */; };
+		075CD1D71DA6D506004B2A62 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1981D969F79004B2A62 /* Currency.swift */; };
+		075CD1D81DA6E539004B2A62 /* DatesCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */; };
 		079084081D773A1E005BC86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079084071D773A1E005BC86F /* AppDelegate.swift */; };
 		0790840A1D773A1E005BC86F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079084091D773A1E005BC86F /* FirstViewController.swift */; };
 		0790840C1D773A1E005BC86F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790840B1D773A1E005BC86F /* SecondViewController.swift */; };
 		079084111D773A1E005BC86F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079084101D773A1E005BC86F /* Assets.xcassets */; };
-		079084141D773A1E005BC86F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079084121D773A1E005BC86F /* LaunchScreen.storyboard */; };
 		0790841C1D7753FA005BC86F /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790841B1D7753FA005BC86F /* NewEntryViewController.swift */; };
 		0790841E1D7AFB63005BC86F /* VenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790841D1D7AFB63005BC86F /* VenuesViewController.swift */; };
 		079084201D7AFB85005BC86F /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790841F1D7AFB85005BC86F /* CategoriesViewController.swift */; };
 		13FE287466CC0CABE1F05FD7 /* Pods_TcehProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E33BE12B385DBE6A3228C206 /* Pods_TcehProject.framework */; };
+		4CAB63F3D4C601DE701E46F2 /* Pods_TcehWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E8C6C2A50E6A8FB82075FF /* Pods_TcehWidget.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		075CD1C91DA6CA0C004B2A62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079083FC1D773A1E005BC86F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 075CD1BE1DA6CA0C004B2A62;
+			remoteInfo = TcehWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		075CD1CF1DA6CA0C004B2A62 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				075CD1CB1DA6CA0C004B2A62 /* TcehWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00B538CA4DC136D78A475C50 /* Pods-TcehWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TcehWidget/Pods-TcehWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		0712D33E1D8B2D5A00849704 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		073818371D7DD8320003D155 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		073818391D7F30720003D155 /* VenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
@@ -40,25 +84,50 @@
 		073819101D8720970003D155 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		073A40961D91AB7A007325B5 /* Categories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		073A40981D91BD47007325B5 /* testTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testTableViewController.swift; sourceTree = "<group>"; };
-		073A409B1D91BEED007325B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		075CD1981D969F79004B2A62 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		075CD19A1D96B166004B2A62 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		075CD19C1D97CD92004B2A62 /* EditEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEntryViewController.swift; sourceTree = "<group>"; };
+		075CD19E1D97D61F004B2A62 /* SelectCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCurrencyViewController.swift; sourceTree = "<group>"; };
+		075CD1A01D9813CC004B2A62 /* SelectDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectDateViewController.swift; sourceTree = "<group>"; };
+		075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesCustomizer.swift; sourceTree = "<group>"; };
+		075CD1A41D9986EC004B2A62 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		075CD1AC1D999FEF004B2A62 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		075CD1B11D99A3EE004B2A62 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		075CD1B51D9AE631004B2A62 /* PieChartViewMine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewMine.swift; sourceTree = "<group>"; };
+		075CD1B71D9D9A48004B2A62 /* TestChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestChartViewController.swift; sourceTree = "<group>"; };
+		075CD1BF1DA6CA0C004B2A62 /* TcehWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TcehWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		075CD1C01DA6CA0C004B2A62 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		075CD1C31DA6CA0C004B2A62 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		075CD1C61DA6CA0C004B2A62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		075CD1C81DA6CA0C004B2A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		075CD1D51DA6D2E3004B2A62 /* TcehProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TcehProject.entitlements; sourceTree = "<group>"; };
+		075CD1D61DA6D3B4004B2A62 /* TcehWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TcehWidget.entitlements; sourceTree = "<group>"; };
 		079084041D773A1E005BC86F /* TcehProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TcehProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079084071D773A1E005BC86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079084091D773A1E005BC86F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		0790840B1D773A1E005BC86F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		079084101D773A1E005BC86F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		079084131D773A1E005BC86F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		079084151D773A1E005BC86F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0790841B1D7753FA005BC86F /* NewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		0790841D1D7AFB63005BC86F /* VenuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesViewController.swift; sourceTree = "<group>"; };
 		0790841F1D7AFB85005BC86F /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		229C47FF4DD6AA5C18BA11D9 /* Pods-TcehProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TcehProject/Pods-TcehProject.release.xcconfig"; sourceTree = "<group>"; };
+		C3E8C6C2A50E6A8FB82075FF /* Pods_TcehWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TcehWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E026F1D7975FB4C6AF0177B8 /* Pods-TcehProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TcehProject/Pods-TcehProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E33BE12B385DBE6A3228C206 /* Pods_TcehProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TcehProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E968EF198F44B96A7C186E8E /* Pods-TcehWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TcehWidget/Pods-TcehWidget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		075CD1BC1DA6CA0C004B2A62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075CD1C11DA6CA0C004B2A62 /* NotificationCenter.framework in Frameworks */,
+				4CAB63F3D4C601DE701E46F2 /* Pods_TcehWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		079084011D773A1E005BC86F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,10 +139,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075CD1C21DA6CA0C004B2A62 /* TcehWidget */ = {
+			isa = PBXGroup;
+			children = (
+				075CD1D61DA6D3B4004B2A62 /* TcehWidget.entitlements */,
+				075CD1C31DA6CA0C004B2A62 /* TodayViewController.swift */,
+				075CD1C51DA6CA0C004B2A62 /* MainInterface.storyboard */,
+				075CD1C81DA6CA0C004B2A62 /* Info.plist */,
+			);
+			path = TcehWidget;
+			sourceTree = "<group>";
+		};
 		079083FB1D773A1E005BC86F = {
 			isa = PBXGroup;
 			children = (
 				079084061D773A1E005BC86F /* TcehProject */,
+				075CD1C21DA6CA0C004B2A62 /* TcehWidget */,
 				079084051D773A1E005BC86F /* Products */,
 				92915EC46FDC0A44E2AE7D91 /* Pods */,
 				D705A3A97609788FE540CAB3 /* Frameworks */,
@@ -84,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				079084041D773A1E005BC86F /* TcehProject.app */,
+				075CD1BF1DA6CA0C004B2A62 /* TcehWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,12 +173,12 @@
 		079084061D773A1E005BC86F /* TcehProject */ = {
 			isa = PBXGroup;
 			children = (
+				075CD1D51DA6D2E3004B2A62 /* TcehProject.entitlements */,
 				079084071D773A1E005BC86F /* AppDelegate.swift */,
 				079084091D773A1E005BC86F /* FirstViewController.swift */,
 				0790840B1D773A1E005BC86F /* SecondViewController.swift */,
-				073A409A1D91BEED007325B5 /* Main.storyboard */,
+				075CD1B11D99A3EE004B2A62 /* Main.storyboard */,
 				079084101D773A1E005BC86F /* Assets.xcassets */,
-				079084121D773A1E005BC86F /* LaunchScreen.storyboard */,
 				079084151D773A1E005BC86F /* Info.plist */,
 				0790841B1D7753FA005BC86F /* NewEntryViewController.swift */,
 				0790841D1D7AFB63005BC86F /* VenuesViewController.swift */,
@@ -112,6 +194,14 @@
 				073A40981D91BD47007325B5 /* testTableViewController.swift */,
 				075CD1981D969F79004B2A62 /* Currency.swift */,
 				075CD19A1D96B166004B2A62 /* WelcomeViewController.swift */,
+				075CD19C1D97CD92004B2A62 /* EditEntryViewController.swift */,
+				075CD19E1D97D61F004B2A62 /* SelectCurrencyViewController.swift */,
+				075CD1A01D9813CC004B2A62 /* SelectDateViewController.swift */,
+				075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */,
+				075CD1A41D9986EC004B2A62 /* GraphView.swift */,
+				075CD1AC1D999FEF004B2A62 /* StatisticsViewController.swift */,
+				075CD1B51D9AE631004B2A62 /* PieChartViewMine.swift */,
+				075CD1B71D9D9A48004B2A62 /* TestChartViewController.swift */,
 			);
 			path = TcehProject;
 			sourceTree = "<group>";
@@ -121,6 +211,8 @@
 			children = (
 				E026F1D7975FB4C6AF0177B8 /* Pods-TcehProject.debug.xcconfig */,
 				229C47FF4DD6AA5C18BA11D9 /* Pods-TcehProject.release.xcconfig */,
+				00B538CA4DC136D78A475C50 /* Pods-TcehWidget.debug.xcconfig */,
+				E968EF198F44B96A7C186E8E /* Pods-TcehWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -129,6 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				E33BE12B385DBE6A3228C206 /* Pods_TcehProject.framework */,
+				075CD1C01DA6CA0C004B2A62 /* NotificationCenter.framework */,
+				C3E8C6C2A50E6A8FB82075FF /* Pods_TcehWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,6 +230,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		075CD1BE1DA6CA0C004B2A62 /* TcehWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 075CD1CE1DA6CA0C004B2A62 /* Build configuration list for PBXNativeTarget "TcehWidget" */;
+			buildPhases = (
+				4C3ED4A0F4C51561DF737301 /* [CP] Check Pods Manifest.lock */,
+				075CD1BB1DA6CA0C004B2A62 /* Sources */,
+				075CD1BC1DA6CA0C004B2A62 /* Frameworks */,
+				075CD1BD1DA6CA0C004B2A62 /* Resources */,
+				9E6BB0F7D740E206D1F9FFFE /* [CP] Embed Pods Frameworks */,
+				5161CCB2AF48482F630AC2EB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TcehWidget;
+			productName = TcehWidget;
+			productReference = 075CD1BF1DA6CA0C004B2A62 /* TcehWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		079084031D773A1E005BC86F /* TcehProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 079084181D773A1E005BC86F /* Build configuration list for PBXNativeTarget "TcehProject" */;
@@ -146,10 +260,12 @@
 				079084021D773A1E005BC86F /* Resources */,
 				7AE3FBF2D96BED46958A5683 /* [CP] Embed Pods Frameworks */,
 				3C372FEAFD9DE530B0ACA20B /* [CP] Copy Pods Resources */,
+				075CD1CF1DA6CA0C004B2A62 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				075CD1CA1DA6CA0C004B2A62 /* PBXTargetDependency */,
 			);
 			name = TcehProject;
 			productName = TcehProject;
@@ -166,9 +282,23 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Yaroslav Smirnov";
 				TargetAttributes = {
+					075CD1BE1DA6CA0C004B2A62 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = GYBM9B57KB;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					079084031D773A1E005BC86F = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = RR2QK8X7ZM;
+						DevelopmentTeam = GYBM9B57KB;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -178,6 +308,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
 			);
 			mainGroup = 079083FB1D773A1E005BC86F;
@@ -186,17 +317,25 @@
 			projectRoot = "";
 			targets = (
 				079084031D773A1E005BC86F /* TcehProject */,
+				075CD1BE1DA6CA0C004B2A62 /* TcehWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		075CD1BD1DA6CA0C004B2A62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075CD1C71DA6CA0C004B2A62 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		079084021D773A1E005BC86F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				073A409C1D91BEED007325B5 /* Main.storyboard in Resources */,
-				079084141D773A1E005BC86F /* LaunchScreen.storyboard in Resources */,
+				075CD1B21D99A3EE004B2A62 /* Main.storyboard in Resources */,
 				079084111D773A1E005BC86F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +356,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TcehProject/Pods-TcehProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C3ED4A0F4C51561DF737301 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5161CCB2AF48482F630AC2EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TcehWidget/Pods-TcehWidget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7AE3FBF2D96BED46958A5683 /* [CP] Embed Pods Frameworks */ = {
@@ -249,9 +418,39 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		9E6BB0F7D740E206D1F9FFFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TcehWidget/Pods-TcehWidget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		075CD1BB1DA6CA0C004B2A62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075CD1D31DA6CDB4004B2A62 /* CoreDataHelper.swift in Sources */,
+				075CD1D41DA6CDB8004B2A62 /* Venue.swift in Sources */,
+				075CD1D11DA6CDA3004B2A62 /* Entry.swift in Sources */,
+				075CD1D01DA6CC90004B2A62 /* EntryCell.swift in Sources */,
+				075CD1C41DA6CA0C004B2A62 /* TodayViewController.swift in Sources */,
+				075CD1D71DA6D506004B2A62 /* Currency.swift in Sources */,
+				075CD1D81DA6E539004B2A62 /* DatesCustomizer.swift in Sources */,
+				075CD1D21DA6CDA8004B2A62 /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		079084001D773A1E005BC86F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,18 +458,26 @@
 				0790840C1D773A1E005BC86F /* SecondViewController.swift in Sources */,
 				073A40971D91AB7A007325B5 /* Categories.swift in Sources */,
 				079084081D773A1E005BC86F /* AppDelegate.swift in Sources */,
+				075CD1A51D9986EC004B2A62 /* GraphView.swift in Sources */,
 				079084201D7AFB85005BC86F /* CategoriesViewController.swift in Sources */,
 				075CD1991D969F79004B2A62 /* Currency.swift in Sources */,
+				075CD1B61D9AE631004B2A62 /* PieChartViewMine.swift in Sources */,
 				075CD19B1D96B166004B2A62 /* WelcomeViewController.swift in Sources */,
 				073818381D7DD8320003D155 /* CategoryCell.swift in Sources */,
 				0790841C1D7753FA005BC86F /* NewEntryViewController.swift in Sources */,
 				0738183A1D7F30720003D155 /* VenueCell.swift in Sources */,
 				073819111D8720970003D155 /* CoreDataHelper.swift in Sources */,
+				075CD1A11D9813CC004B2A62 /* SelectDateViewController.swift in Sources */,
+				075CD1B81D9D9A48004B2A62 /* TestChartViewController.swift in Sources */,
 				073A40991D91BD47007325B5 /* testTableViewController.swift in Sources */,
 				0738183E1D8093790003D155 /* EntryCell.swift in Sources */,
+				075CD1AD1D999FEF004B2A62 /* StatisticsViewController.swift in Sources */,
 				0738183C1D808F7E0003D155 /* Entry.swift in Sources */,
+				075CD19D1D97CD92004B2A62 /* EditEntryViewController.swift in Sources */,
 				0790841E1D7AFB63005BC86F /* VenuesViewController.swift in Sources */,
+				075CD1A31D9827AD004B2A62 /* DatesCustomizer.swift in Sources */,
 				0738190F1D871D330003D155 /* Model.xcdatamodeld in Sources */,
+				075CD19F1D97D61F004B2A62 /* SelectCurrencyViewController.swift in Sources */,
 				0712D33F1D8B2D5A00849704 /* Venue.swift in Sources */,
 				0790840A1D773A1E005BC86F /* FirstViewController.swift in Sources */,
 			);
@@ -278,26 +485,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		073A409A1D91BEED007325B5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				073A409B1D91BEED007325B5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		075CD1CA1DA6CA0C004B2A62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 075CD1BE1DA6CA0C004B2A62 /* TcehWidget */;
+			targetProxy = 075CD1C91DA6CA0C004B2A62 /* PBXContainerItemProxy */;
 		};
-		079084121D773A1E005BC86F /* LaunchScreen.storyboard */ = {
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		075CD1C51DA6CA0C004B2A62 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				079084131D773A1E005BC86F /* Base */,
+				075CD1C61DA6CA0C004B2A62 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		075CD1CC1DA6CA0C004B2A62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00B538CA4DC136D78A475C50 /* Pods-TcehWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TcehWidget/TcehWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TcehWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		075CD1CD1DA6CA0C004B2A62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E968EF198F44B96A7C186E8E /* Pods-TcehWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TcehWidget/TcehWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TcehWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		079084161D773A1E005BC86F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -386,11 +623,13 @@
 			baseConfigurationReference = E026F1D7975FB4C6AF0177B8 /* Pods-TcehProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconXT;
+				CODE_SIGN_ENTITLEMENTS = TcehProject/TcehProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TcehProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stellarnode.TcehProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -401,11 +640,13 @@
 			baseConfigurationReference = 229C47FF4DD6AA5C18BA11D9 /* Pods-TcehProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconXT;
+				CODE_SIGN_ENTITLEMENTS = TcehProject/TcehProject.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = TcehProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stellarnode.TcehProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -414,6 +655,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		075CD1CE1DA6CA0C004B2A62 /* Build configuration list for PBXNativeTarget "TcehWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				075CD1CC1DA6CA0C004B2A62 /* Debug */,
+				075CD1CD1DA6CA0C004B2A62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		079083FF1D773A1E005BC86F /* Build configuration list for PBXProject "TcehProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

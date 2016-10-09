@@ -10,6 +10,8 @@ class SecondViewController: UIViewController, MKMapViewDelegate {
 
     var entries = [Entry]()
 
+    let formatNumber = Currency.initializeNumberFormatter()
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -47,7 +49,7 @@ class SecondViewController: UIViewController, MKMapViewDelegate {
         for entry in entries {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: entry.venue.latitude, longitude: entry.venue.longitude)
-            annotation.title = String(format: "%.2f", entry.amount) + " for \(entry.category)"
+            annotation.title = formatNumber(amount: entry.amount, currencyTicker: entry.currency ?? Currency.baseCurrency) + " for \(entry.category)"
             annotation.subtitle = entry.venue.name
             mapView.addAnnotation(annotation)
         }

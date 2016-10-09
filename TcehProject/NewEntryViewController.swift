@@ -9,7 +9,7 @@ protocol NewEntryViewControllerDelegate {
 
 
 class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate,
-    VenuesViewControllerDelegate, UITextFieldDelegate {
+    VenuesViewControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate, SelectCurrencyViewControllerDelegate, SelectDateViewControllerDelegate {
 
     @IBOutlet weak var textFieldAmount: UITextField!    
     
@@ -17,8 +17,17 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
 
     @IBOutlet weak var buttonVenue: UIButton!
 
+    @IBOutlet weak var buttonDate: UIButton!
+    
+    @IBOutlet weak var labelCurrency: UILabel!
+
+
     var selectedVenue: Venue?
     var selectedCategory: String?
+    var selectedCurrency: String = Currency.baseCurrency
+    var selectedDate: NSDate = NSDate()
+
+    var formatDate = DatesCustomizer.initializeFormatter()
 
     var delegate: NewEntryViewControllerDelegate?
 
@@ -31,12 +40,98 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
         textFieldAmount.text = ""
         textFieldAmount.placeholder = "000.00"
         textFieldAmount.becomeFirstResponder()
+
+
+        labelCurrency.userInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.chooseCurrency))
+        labelCurrency.addGestureRecognizer(tap)
+
+        setCurrencyLabel(Currency.baseCurrency)
+
+        buttonDate.setTitle(formatDate(date: selectedDate), forState: .Normal)
+        buttonDate.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        buttonDate.titleLabel?.font = UIFont.systemFontOfSize(16, weight: UIFontWeightThin)
+
     }
+
+
+    func setCurrencyLabel(selectedCurrency: String) {
+
+        switch selectedCurrency {
+
+        case "RUB":
+            labelCurrency.text = "₽"
+            labelCurrency.font = UIFont.systemFontOfSize(48)
+        case "USD":
+            labelCurrency.text = "$"
+            labelCurrency.font = UIFont.systemFontOfSize(48)
+        case "EUR":
+            labelCurrency.text = "€"
+            labelCurrency.font = UIFont.systemFontOfSize(48)
+        case "GBP":
+            labelCurrency.text = "£"
+            labelCurrency.font = UIFont.systemFontOfSize(48)
+        default:
+            labelCurrency.font = UIFont.systemFontOfSize(24)
+            labelCurrency.text = selectedCurrency
+        }
+
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+
+
+    func chooseCurrency(sender: UILabel) {
+        print("hello \(Currency.baseCurrency)")
+
+        textFieldAmount.resignFirstResponder()
+
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SelectCurrencyPopOver") as! SelectCurrencyViewController
+
+        navigationController!.addChildViewController(popOverVC)
+
+        popOverVC.view.frame = navigationController!.view.bounds
+
+        navigationController!.view.addSubview(popOverVC.view)
+        popOverVC.delegate = self
+
+        popOverVC.didMoveToParentViewController(navigationController!)
+
+    }
+
+
+    func didSelectCurrency(ticker: String, fullCurrencyName: String) {
+        selectedCurrency = ticker
+        setCurrencyLabel(ticker)
+        textFieldAmount.becomeFirstResponder()
+
+    }
+
+
+    @IBAction func chooseDate(sender: UIButton) {
+        textFieldAmount.resignFirstResponder()
+
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SelectDatePopOver") as! SelectDateViewController
+
+        navigationController!.addChildViewController(popOverVC)
+
+        popOverVC.view.frame = navigationController!.view.bounds
+
+        navigationController!.view.addSubview(popOverVC.view)
+        popOverVC.delegate = self
+
+        popOverVC.didMoveToParentViewController(navigationController!)
+    }
+
+    func didSelectDate(date: NSDate) {
+        selectedDate = date
+        buttonDate.setTitle(formatDate(date: selectedDate), forState: .Normal)
+        textFieldAmount.becomeFirstResponder()
+    }
+
 
 
     func textField(textField: UITextField,
@@ -62,6 +157,7 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
 
 
     @IBAction func tapClose(sender: AnyObject) {
+        textFieldAmount.resignFirstResponder()
         presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -74,9 +170,30 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
                 textFieldAmount.resignFirstResponder()
 
                 if let venue = selectedVenue, category = selectedCategory {
-                    CoreDataHelper.instance.context.insertObject(venue)
-                    let entry = Entry(amount: amount, venue: venue, category: category)
-                    delegate?.entryCreated(entry)
+
+                    CoreDataHelper.instance.concurrent.performBlock {
+                        let concurrent = CoreDataHelper.instance.concurrent
+
+                        concurrent.performBlock {
+                            concurrent.insertObject(venue)
+                            let entry = Entry(amount: amount, venue: venue, category: category, currency: self.selectedCurrency, date: self.selectedDate, context: concurrent)
+                            CoreDataHelper.instance.saveConcurrent()
+
+                            CoreDataHelper.instance.context.performBlock {
+                                let mainEntry = CoreDataHelper.instance.context.objectWithID(entry.objectID) as! Entry
+                                self.delegate?.entryCreated(mainEntry)
+                            }
+
+                        }
+                        
+                    }
+
+//                    CoreDataHelper.instance.context.insertObject(venue)
+//
+//                    let entry = Entry(amount: amount, venue: venue,
+//                          category: category, currency: selectedCurrency, date: selectedDate)
+//
+//                    delegate?.entryCreated(entry)
                 }
 
             }
@@ -112,7 +229,7 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
 
         buttonCategory.setTitle(category, forState: .Normal)
         buttonCategory.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
-        buttonCategory.titleLabel?.font = UIFont.systemFontOfSize(30, weight: UIFontWeightThin)
+        buttonCategory.titleLabel?.font = UIFont.systemFontOfSize(24, weight: UIFontWeightThin)
 
         selectedCategory = category
     }
@@ -121,7 +238,7 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
         print(venue)
         buttonVenue.setTitle(venue.name, forState: .Normal)
         buttonVenue.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
-        buttonVenue.titleLabel?.font = UIFont.systemFontOfSize(30, weight: UIFontWeightThin)
+        buttonVenue.titleLabel?.font = UIFont.systemFontOfSize(24, weight: UIFontWeightThin)
 
         selectedVenue = venue
     }

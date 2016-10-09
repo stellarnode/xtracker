@@ -11,16 +11,17 @@ class Entry: NSManagedObject {
     @NSManaged var currency: String?
     @NSManaged var date: NSDate?
     @NSManaged var createdAt: NSDate
+    var amountConvertedToBaseCurrency: Double?
 
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
 
-    init(amount: Double, venue: Venue, category: String, currency: String, date: NSDate) {
+    init(amount: Double, venue: Venue, category: String, currency: String, date: NSDate, context: NSManagedObjectContext) {
 
-        let entity = NSEntityDescription.entityForName("Entry", inManagedObjectContext: CoreDataHelper.instance.context)!
+        let entity = NSEntityDescription.entityForName("Entry", inManagedObjectContext: context)!
 
-        super.init(entity: entity, insertIntoManagedObjectContext: CoreDataHelper.instance.context)
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
 
         self.amount = amount
         self.venue = venue
@@ -30,14 +31,22 @@ class Entry: NSManagedObject {
         self.createdAt = NSDate()
     }
 
-    convenience init(amount: Double, venue: Venue, category: String) {
-        self.init(amount: amount, venue: venue, category: category, currency: Currency.baseCurrency, date: NSDate())
+    convenience init(amount: Double, venue: Venue, category: String, context: NSManagedObjectContext) {
+        self.init(amount: amount, venue: venue, category: category, currency: Currency.baseCurrency, date: NSDate(), context: context)
+    }
+
+    convenience init(amount: Double, venue: Venue, category: String, currency: String, context: NSManagedObjectContext) {
+        self.init(amount: amount, venue: venue, category: category, currency: currency, date: NSDate(), context: context)
     }
 
 
-    class func loadEntries() -> [Entry] {
+    class func loadEntries(limit: Int? = nil) -> [Entry] {
         let request = NSFetchRequest(entityName: "Entry")
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
+
+        if let limit = limit {
+            request.fetchLimit = limit
+        }
 
         do {
             let results = try CoreDataHelper.instance.context.executeFetchRequest(request)

@@ -32,7 +32,7 @@ class CategoriesViewController: UITableViewController {
 
         alert.addTextFieldWithConfigurationHandler { textField in
 //            textField.backgroundColor = UIColor.clearColor()
-            textField.borderStyle = .RoundedRect
+//            textField.borderStyle = .RoundedRect
             textField.placeholder = "Category name..."
         }
 

@@ -2,68 +2,67 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    @IBOutlet weak var currencyPicker: UIPickerView!
+class WelcomeViewController: UIViewController, SelectCurrencyViewControllerDelegate {
+
 
     @IBOutlet weak var currencyStatus: UITextView!
 
-    var currencies: [String] = Currency.manager.list {
+    var activeCurrencyIndex = 0
 
-        didSet {
-            currencyPicker.reloadAllComponents()
-        }
-
-    }
+    var currencies: [String] = Currency.manager.list
 
 
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         currencies = Currency.manager.list
+
     }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        currencyPicker.dataSource = self
-        currencyPicker.delegate = self
+    }
 
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        activeCurrencyIndex = Currency.baseCurrencyFullNameIndex
+
+        currencyStatus.text = "\(currencies[activeCurrencyIndex].uppercaseString) \n is currently set as your base currency."
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
 
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+    @IBAction func selectNewBaseCurrencyButton(sender: UIButton) {
+
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SelectCurrencyPopOver") as! SelectCurrencyViewController
+
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.delegate = self
+
+        popOverVC.didMoveToParentViewController(self)
+
     }
 
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return currencies.count
-    }
 
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.currencies[row]
-    }
-
-
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selection = currencies[row]
-        let range = selection.startIndex.advancedBy(0)...selection.startIndex.advancedBy(2)
-        let ticker = selection.substringWithRange(range)
-
+    func didSelectCurrency(ticker: String, fullCurrencyName: String) {
         if ticker == ticker.uppercaseString {
-            Currency.baseCurrency = selection
+            Currency.baseCurrency = ticker
             Currency.userDefined = true
 
-            currencyStatus.text = "\(selection.uppercaseString) \n" +
-                "will now be used as your base currency."
+            currencyStatus.text = "\(fullCurrencyName.uppercaseString) \n" +
+            "is set as your base currency."
         }
-
     }
+
+
 
 
     /*

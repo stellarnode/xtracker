@@ -20,7 +20,6 @@ class Currency {
     var list: [String] {
 
         get {
-
             if let list = Defaults[.currencyList] {
                 _list = list
                 return _list
@@ -29,14 +28,12 @@ class Currency {
                 Currency.loadCurrencies()
                 return _list
             }
-
         }
 
         set {
             _list = newValue
             Defaults[.currencyList] = newValue
         }
-
     }
 
     private static let apiEndpoint = "http://apilayer.net/api/"
@@ -49,6 +46,22 @@ class Currency {
         }
 
     }
+
+
+    static var baseCurrencyFullNameIndex: Int {
+
+        var index = 0
+
+        for (idx, currency) in Currency.manager.list.enumerate() {
+
+            if currency.hasPrefix(Currency.baseCurrency) {
+                index = idx
+            }
+        }
+
+        return index
+    }
+
 
     static var userDefined = false {
 
@@ -79,6 +92,30 @@ class Currency {
 
     }
     
+
+    static func initializeNumberFormatter() -> ((amount: Double, currencyTicker: String) -> String) {
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.usesGroupingSeparator = true
+        numberFormatter.numberStyle = .CurrencyStyle
+
+        func performFormatting(amount: Double, currencyTicker: String) -> String {
+            var currentLocale = NSLocale.currentLocale().localeIdentifier
+            currentLocale += "@currency=\(currencyTicker)"
+
+            numberFormatter.locale = NSLocale.init(localeIdentifier: currentLocale)
+
+            if currencyTicker == "RUB" {
+                numberFormatter.currencySymbol = "₽"
+            } else {
+                numberFormatter.currencySymbol = nil
+            }
+
+            return numberFormatter.stringFromNumber(amount)!
+        }
+
+        return performFormatting
+
+    }
 
 
     static func loadCurrencies() {
@@ -117,5 +154,32 @@ class Currency {
         }
 
     }
+
+
+
+    static func getFXRateURLandParams(from: String, to: String, date: NSDate) -> (String, Dictionary<String, String>) {
+
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
+        let dateString = dateFormatter.stringFromDate(date)
+
+        print(dateString)
+
+
+        let url = Currency.apiEndpoint + "historical"
+
+        let params = [
+            "access_key": Currency.apiKey,
+//            "source": "USD",
+            "currencies": "USD,\(from),\(to)",
+            "date": dateString
+        ]
+
+        return (url, params)
+
+    }
+
+
 
 }
