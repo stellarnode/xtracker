@@ -770,10 +770,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="mPa-CQ-fqB">
-                                <rect key="frame" x="20" y="96" width="560" height="218"/>
+                                <rect key="frame" x="20" y="96" width="560" height="330"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9T5-Zt-m2C">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="bor-ID-VWI">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ePO-oo-b59">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="56"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4D-Er-a2h">
+                                                <rect key="frame" x="0.0" y="62" width="560" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="d4D-Er-a2h" firstAttribute="leading" secondItem="bor-ID-VWI" secondAttribute="leading" id="EIT-T5-4Ea"/>
+                                            <constraint firstAttribute="trailing" secondItem="d4D-Er-a2h" secondAttribute="trailing" id="g1R-VW-AnK"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9T5-Zt-m2C">
+                                        <rect key="frame" x="0.0" y="112" width="560" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdH-oy-p5D">
                                                 <rect key="frame" x="207" y="0.0" width="146" height="51"/>
@@ -789,24 +807,24 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Hu-TZ-9w0">
-                                        <rect key="frame" x="0.0" y="112" width="560" height="106"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Hu-TZ-9w0">
+                                        <rect key="frame" x="0.0" y="224" width="560" height="106"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sR-kD-wyA">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sR-kD-wyA">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                                 <state key="normal" title="Change Amount"/>
                                                 <connections>
                                                     <action selector="changeAmount:" destination="etK-Rl-a8M" eventType="touchUpInside" id="Rnr-j3-J0U"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBf-WL-ueN">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBf-WL-ueN">
                                                 <rect key="frame" x="0.0" y="38" width="560" height="30"/>
                                                 <state key="normal" title="Change Date"/>
                                                 <connections>
                                                     <action selector="changeDate:" destination="etK-Rl-a8M" eventType="touchUpInside" id="vVf-tL-6sS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlB-Gg-f80">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlB-Gg-f80">
                                                 <rect key="frame" x="0.0" y="76" width="560" height="30"/>
                                                 <state key="normal" title="Change Currency"/>
                                                 <connections>
@@ -817,15 +835,20 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="9T5-Zt-m2C" firstAttribute="top" secondItem="mPa-CQ-fqB" secondAttribute="top" id="Gji-ad-UVo"/>
+                                    <constraint firstItem="9T5-Zt-m2C" firstAttribute="top" secondItem="bor-ID-VWI" secondAttribute="bottom" constant="32" id="Gyr-IQ-asE"/>
+                                    <constraint firstItem="bor-ID-VWI" firstAttribute="leading" secondItem="mPa-CQ-fqB" secondAttribute="leading" id="aTd-gT-SgV"/>
+                                    <constraint firstAttribute="height" constant="330" id="fto-GH-RIe"/>
+                                    <constraint firstItem="bor-ID-VWI" firstAttribute="top" secondItem="mPa-CQ-fqB" secondAttribute="top" id="kaN-zH-ghE"/>
+                                    <constraint firstAttribute="trailing" secondItem="bor-ID-VWI" secondAttribute="trailing" id="vKJ-TG-JnA"/>
+                                    <constraint firstItem="5Hu-TZ-9w0" firstAttribute="top" secondItem="9T5-Zt-m2C" secondAttribute="bottom" constant="32" id="zEg-Ki-0jX"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mPa-CQ-fqB" firstAttribute="leading" secondItem="4l0-qE-m7W" secondAttribute="leadingMargin" id="GlF-aq-eWX"/>
+                            <constraint firstItem="mPa-CQ-fqB" firstAttribute="top" secondItem="0Rm-RE-fq7" secondAttribute="bottom" constant="32" id="UWC-5A-0er"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mPa-CQ-fqB" secondAttribute="trailing" id="pzV-QS-AGy"/>
-                            <constraint firstItem="mPa-CQ-fqB" firstAttribute="top" secondItem="0Rm-RE-fq7" secondAttribute="bottom" constant="32" id="qEv-ca-l4o"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Entry" id="aKZ-Fk-0iC">
@@ -837,7 +860,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="labelAmount" destination="AdH-oy-p5D" id="S8g-Ea-ObT"/>
+                        <outlet property="labelCategory" destination="d4D-Er-a2h" id="A1p-ub-sLD"/>
                         <outlet property="labelDate" destination="JSG-Be-c9V" id="8JB-8u-v6A"/>
+                        <outlet property="venueImage" destination="ePO-oo-b59" id="5zu-8l-jN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlW-bL-AnE" userLabel="First Responder" sceneMemberID="firstResponder"/>

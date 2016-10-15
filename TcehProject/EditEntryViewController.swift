@@ -1,6 +1,7 @@
 
 
 import UIKit
+import SDWebImage
 
 protocol EditEntryViewControllerDelegate {
     func updateEntryAfterChange(entry: Entry)
@@ -19,11 +20,18 @@ class EditEntryViewController: UIViewController, SelectDateViewControllerDelegat
 
     @IBOutlet weak var labelAmount: UILabel!
     @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var venueImage: UIImageView!
+    @IBOutlet weak var labelCategory: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         labelAmount.text = formatNumber(amount: entry!.amount, currencyTicker: entry!.currency!)
         labelDate.text = formatDate(date: entry!.date!)
+        labelCategory.text = entry!.category
+
+        let iconURL = NSURL(string: entry!.venue.icon)
+        venueImage.sd_setImageWithURL(iconURL)
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -57,10 +57,8 @@ extension WatchHelper: WCSessionDelegate {
     }
 
     func session(session: WCSession, didReceiveUserInfo userInfo: [String: AnyObject]) {
-
         print("received userInfo from watch")
         print(userInfo)
-
     }
 
     func sessionDidBecomeInactive(session: WCSession) {

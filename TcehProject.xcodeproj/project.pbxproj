@@ -281,6 +281,7 @@
 				07CD171C1DB21B7B00EF36F3 /* Model */,
 				07CD171D1DB21BA500EF36F3 /* View */,
 				07CD171B1DB21B3E00EF36F3 /* Controller */,
+				07CD172F1DB2A34C00EF36F3 /* Extensions */,
 				07CD171E1DB21BE100EF36F3 /* Helpers */,
 				07CD171F1DB21C1C00EF36F3 /* Resources */,
 			);
@@ -388,6 +389,13 @@
 				079084151D773A1E005BC86F /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		07CD172F1DB2A34C00EF36F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		92915EC46FDC0A44E2AE7D91 /* Pods */ = {
