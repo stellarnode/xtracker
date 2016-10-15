@@ -1,0 +1,59 @@
+PODS:
+  - Alamofire (3.2.1)
+  - Charts (2.2.5):
+    - Charts/Core (= 2.2.5)
+  - Charts/Core (2.2.5)
+  - Money (1.7.0):
+    - ValueCoding
+  - OMGHTTPURLRQ (3.2.0):
+    - OMGHTTPURLRQ/RQ (= 3.2.0)
+  - OMGHTTPURLRQ/FormURLEncode (3.2.0)
+  - OMGHTTPURLRQ/RQ (3.2.0):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (3.2.0)
+  - PromiseKit (3.5.1):
+    - PromiseKit/Foundation (= 3.5.1)
+    - PromiseKit/QuartzCore (= 3.5.1)
+    - PromiseKit/UIKit (= 3.5.1)
+  - PromiseKit/CorePromise (3.5.1)
+  - PromiseKit/Foundation (3.5.1):
+    - OMGHTTPURLRQ (~> 3.2.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (3.5.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (3.5.1):
+    - PromiseKit/CorePromise
+  - RandomColorSwift (0.1.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SwiftyJSON (2.3.2)
+  - SwiftyUserDefaults (2.2.1)
+  - ValueCoding (1.4.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.2.0)
+  - Charts (~> 2.2.5)
+  - Money
+  - PromiseKit (~> 3.5)
+  - RandomColorSwift (~> 0.1.0)
+  - SDWebImage (~> 3.8)
+  - SwiftyJSON (~> 2.3.0)
+  - SwiftyUserDefaults (~> 2.2.1)
+
+SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  Money: f46c3c8fcaf7afa35f2ee3edaeba58335fd5b669
+  OMGHTTPURLRQ: 1e54807cb7d5dbb506926e53498e1e9ac5720c79
+  PromiseKit: 99ea973444a4bff6c38ffb97fa1bb175e619bcf0
+  RandomColorSwift: b2e95d6d3670def6d2f907ec7b7041138b268ac9
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  SwiftyUserDefaults: 7abdba50a50ea0c18ee8903af3c88e4c1cb8448d
+  ValueCoding: 4b367356db01b7ecb4203a24620ca4423385cd33
+
+PODFILE CHECKSUM: 5377159fb5aab32ddaebdd1cc2ecf69d466d7ebb
+
+COCOAPODS: 1.0.1
