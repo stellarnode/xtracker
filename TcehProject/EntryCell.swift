@@ -11,9 +11,8 @@ import UIKit
 class EntryCell: UITableViewCell {
 
     @IBOutlet weak var labelAmount: UILabel!
-
+    @IBOutlet weak var labelAmountInOriginalCurency: UILabel!
     @IBOutlet weak var labelCategory: UILabel!
-    
     @IBOutlet weak var labelDate: UILabel!
 
     override func awakeFromNib() {

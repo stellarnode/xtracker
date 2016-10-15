@@ -58,7 +58,12 @@ class Categories {
     ]
 
     var userDefinedCategories = [String]()
-    var storage = NSUserDefaults.standardUserDefaults()
+
+    // local storage option
+    // var storage = NSUserDefaults.standardUserDefaults()
+
+    // icloud storage option with local replica
+    var storage = NSUbiquitousKeyValueStore.defaultStore()
 
     static let categoryManager = Categories()
 

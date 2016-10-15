@@ -35,12 +35,17 @@ class SelectDateViewController: UIViewController {
 
 
     
-    @IBAction func didSelectDate(sender: UIBarButtonItem) {
+    @IBAction func didSelectDate(sender: UIButton) {
         let date = datePicker.date
         delegate?.didSelectDate(date)
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
 
+    }
+
+    @IBAction func cancelButtonPressed(sender: UIButton) {
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
     }
 
 

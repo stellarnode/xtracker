@@ -80,7 +80,7 @@ class SelectCurrencyViewController: UIViewController, UIPickerViewDataSource, UI
 
 
     
-    @IBAction func didSelectCurrency(sender: UIBarButtonItem) {
+    @IBAction func didSelectCurrency(sender: UIButton) {
 
         let row = currencyPicker.selectedRowInComponent(0)
         let selection = currencies[row]
@@ -90,6 +90,11 @@ class SelectCurrencyViewController: UIViewController, UIPickerViewDataSource, UI
         print(ticker)
 
         self.delegate?.didSelectCurrency(ticker, fullCurrencyName: selection)
+        self.view.removeFromSuperview()
+        self.removeFromParentViewController()
+    }
+
+    @IBAction func cancelButtonPressed(sender: UIButton) {
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
     }

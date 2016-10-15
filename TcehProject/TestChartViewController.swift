@@ -19,8 +19,25 @@ class TestChartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         lineChart.startAnimation(0.75)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(tapAction))
+
+    }
+
+    func tapAction() {
+        UIGraphicsBeginImageContextWithOptions(lineChart.bounds.size, true, 0)
+        defer { UIGraphicsEndImageContext() }
+
+        lineChart.drawViewHierarchyInRect(lineChart.bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()!
+
+        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+
+        presentViewController(controller, animated: true, completion: nil)
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
 

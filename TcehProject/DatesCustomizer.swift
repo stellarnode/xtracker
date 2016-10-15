@@ -10,19 +10,18 @@ class DatesCustomizer {
 
         dateFormatter.dateStyle = .ShortStyle
 
-// UNCOMMENT TO USE LOCALE OF THE USER
-//        var currentLocale = NSLocale.currentLocale().localeIdentifier
-//        dateFormatter.locale = NSLocale.init(localeIdentifier: currentLocale)
+        // UNCOMMENT TO USE LOCALE OF THE USER
+        var currentLocale = NSLocale.currentLocale().localeIdentifier
+        print("current locale for data: \(currentLocale)")
+        dateFormatter.locale = NSLocale(localeIdentifier: currentLocale)
 
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_UK")
+        // USE U.K. LOCALE FOR DATES
+        // dateFormatter.locale = NSLocale(localeIdentifier: "en_UK")
 
 
         func formatDate(date: NSDate) -> String {
-
             return dateFormatter.stringFromDate(date)
-
         }
-
 
         return formatDate
 

@@ -153,11 +153,13 @@ extension FirstViewController: NSFetchedResultsControllerDelegate {
                     // cell.labelAmount.text = String(format: "%.2f", entry.amount * fxRate)
                     // cell.labelAmount.text = String(format: "%.2f", entry.amount / fromCurrency * toCurrency)
                     cell.labelAmount.text = self!.formatNumber(amount: entry.amount / fromCurrency * toCurrency, currencyTicker: Currency.baseCurrency)
+                    cell.labelAmountInOriginalCurency.text = self!.formatNumber(amount: entry.amount, currencyTicker: entryCurrency)
                 }
             }
         } else {
             // cell.labelAmount.text = String(format: "%.2f", entry.amount)
             cell.labelAmount.text = formatNumber(amount: entry.amount, currencyTicker: Currency.baseCurrency)
+            cell.labelAmountInOriginalCurency.text = ""
         }
     }
 
@@ -194,6 +196,7 @@ extension FirstViewController: UITableViewDataSource {
             selectedEntry = sections[0].objects![indexPath.row] as? Entry
             editEntryVC!.entry = selectedEntry
         }
+        tableEntries.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
 
@@ -261,6 +264,7 @@ extension FirstViewController: NewEntryViewControllerDelegate, EditEntryViewCont
 
         do {
             try CoreDataHelper.instance.context.save()
+            WatchHelper.instance.updateContext()
         } catch {
             print("saving entry failed")
         }

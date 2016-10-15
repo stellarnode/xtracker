@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+
+        WatchHelper.instance
+
         return true
     }
 
@@ -41,6 +44,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        print(url.scheme)
+
+        switch url.host! {
+        case "newentry":
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let controller = storyboard.instantiateViewControllerWithIdentifier("NewEntryNavigation") as? UINavigationController {
+                let navigationController = (window?.rootViewController as? UITabBarController)?.viewControllers?[0] as? UINavigationController
+                let listController = navigationController?.viewControllers[0] as? FirstViewController
+                (controller.viewControllers[0] as? NewEntryViewController)?.delegate = listController
+                listController?.presentViewController(controller, animated: true, completion: nil)
+            }
+        default:
+            break
+        }
+        return true
+    }
 
 }
 
