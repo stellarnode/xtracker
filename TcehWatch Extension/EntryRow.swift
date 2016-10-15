@@ -10,4 +10,7 @@ import WatchKit
 
 class EntryRow: NSObject {
 
+    @IBOutlet var labelCategory: WKInterfaceLabel!
+    @IBOutlet var labelAmount: WKInterfaceLabel!
+
 }

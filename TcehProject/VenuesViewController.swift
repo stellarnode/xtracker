@@ -11,7 +11,7 @@ protocol VenuesViewControllerDelegate {
 }
 
 
-class VenuesViewController: UITableViewController, CLLocationManagerDelegate {
+class VenuesViewController: UITableViewController {
 
     // MARK: Properties
 
@@ -44,29 +44,87 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Table view data source
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return venues.count
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // Remember to unwrapp as! VenueCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueCell
+
+        let iconURL = NSURL(string: venues[indexPath.row].icon)
+
+        print(iconURL)
+
+        cell.imageCategory.sd_setImageWithURL(iconURL)
+        cell.labelVenue.text = venues[indexPath.row].name
+        cell.labelDistance.text = "\(venues[indexPath.row].distance) m"
+        return cell
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let selectedVenue = venues[indexPath.row]
+        dismissViewControllerAnimated(true, completion: nil)
+        delegate?.venuesViewController(self, didSelectVenue: selectedVenue)
+    }
+
+
+}
+
+
+// MARK: CLLocationManagerDelegate Methods
+
+extension VenuesViewController: CLLocationManagerDelegate {
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            loadNearbyVenues(location)
+            manager.stopUpdatingLocation()
+        }
+    }
+
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        switch status {
+        case .AuthorizedAlways, .AuthorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+        case .NotDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        default:
+            print("Not able to determine location. Please allow the app to use the location.")
+        }
+    }
 
     func refreshLocation() {
         locationManager.startUpdatingLocation()
     }
-
 
     func loadNearbyVenues(location: CLLocation) {
 
         let lat = location.coordinate.latitude
         let lon = location.coordinate.longitude
 
-        let baseAPIURL = "https://api.foursquare.com/v2/venues/search"
+        let baseAPIURL = Env.FoursquareBaseApiURL
 
         print("\(lat), \(lon)")
 
         let params = [
             "ll": "\(lat),\(lon)",
-            "client_id": "HYIJPMWKUCHP0OAD4QG2R21XJLLVTWIHASBJGPQ2M342IFAM",
-            "client_secret": "04MUOTIS5QVIN2YJZL55LGN4FXRRZTL1XXGWFZGBUBMZ4JOK",
-            "v": "20160914"
+            "client_id": Env.FoursquareClientId,
+            "client_secret": Env.FoursquareClientSecret,
+            "v": Env.FoursquareV
         ]
-
-//        let url = "https://api.foursquare.com/v2/venues/search?ll=\(lat),\(lon)" + "&client_id=HYIJPMWKUCHP0OAD4QG2R21XJLLVTWIHASBJGPQ2M342IFAM" + "&client_secret=04MUOTIS5QVIN2YJZL55LGN4FXRRZTL1XXGWFZGBUBMZ4JOK&v=20160914"
 
         Alamofire.request(.GET, baseAPIURL, parameters: params).responseJSON { response in
             if let value = response.result.value {
@@ -94,12 +152,12 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate {
                     }
 
                     let venue = Venue(name: name,
-                                      latitude: latitude,
-                                      longitude: longitude,
-                                      distance: distance,
-                                      category: category,
-                                      icon: icon,
-                                      id: id)
+                        latitude: latitude,
+                        longitude: longitude,
+                        distance: distance,
+                        category: category,
+                        icon: icon,
+                        id: id)
                     venues.append(venue)
                 }
 
@@ -109,67 +167,6 @@ class VenuesViewController: UITableViewController, CLLocationManagerDelegate {
                 self.refreshControl!.endRefreshing()
             }
         }
-
     }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return venues.count
-    }
-
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // Remember to unwrapp as! VenueCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("VenueCell", forIndexPath: indexPath) as! VenueCell
-
-        let iconURL = NSURL(string: venues[indexPath.row].icon)
-
-        print(iconURL)
-
-        cell.imageCategory.sd_setImageWithURL(iconURL)
-        cell.labelVenue.text = venues[indexPath.row].name
-        cell.labelDistance.text = "\(venues[indexPath.row].distance) m"
-        return cell
-    }
-
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let selectedVenue = venues[indexPath.row]
-        dismissViewControllerAnimated(true, completion: nil)
-        delegate?.venuesViewController(self, didSelectVenue: selectedVenue)
-    }
-
-
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            loadNearbyVenues(location)
-            manager.stopUpdatingLocation()
-        }
-    }
-
-
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        switch status {
-        case .AuthorizedAlways, .AuthorizedWhenInUse:
-            locationManager.startUpdatingLocation()
-        case .NotDetermined:
-            locationManager.requestWhenInUseAuthorization()
-        default:
-            print("Not able to determine location. Please allow the app to use the location.")
-        }
-    }
-
-
 }
+

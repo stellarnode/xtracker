@@ -36,8 +36,8 @@ class Currency {
         }
     }
 
-    private static let apiEndpoint = "http://apilayer.net/api/"
-    private static let apiKey = "96c83b8075825e87ee1b9f9e78209af5"
+    private static let apiEndpoint = Env.CurrencyLayerApiEndpoint
+    private static let apiKey = Env.CurrencyLayerApiKey
 
     static var baseCurrency = "RUB" {
 

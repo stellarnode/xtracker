@@ -15,7 +15,6 @@ import SwiftyJSON
 
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataSource, UITableViewDelegate {
 
-
     @IBOutlet weak var tableEntries: UITableView!
     let entries = Entry.loadEntries(3)
     var fetchedResultsController = NSFetchedResultsController()
@@ -34,8 +33,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
         super.didReceiveMemoryWarning()
     }
 
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("entries count: \(entries.count)")
         return entries.count
     }
 
@@ -59,44 +62,18 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
         cell.labelCategory.textColor = UIColor.whiteColor()
         cell.labelDate.textColor = UIColor.whiteColor()
 
-        var entryDate = NSDate()
-        let entryCurrency = entry.currency ?? "USD"
+        let entryCurrency = entry.currency ?? Currency.baseCurrency
 
         if let date = entry.date {
             cell.labelDate.text = formatDate(date: date)
-            entryDate = date
         } else {
             let today = NSDate()
             cell.labelDate.text = formatDate(date: today)
-            entryDate = today
         }
 
         cell.labelCategory.text = entry.category
-        cell.labelAmount.text = formatNumber(amount: entry.amount, currencyTicker: Currency.baseCurrency)
+        cell.labelAmount.text = formatNumber(amount: entry.amount, currencyTicker: entryCurrency)
 
-//        if entryCurrency != Currency.baseCurrency {
-//            // cell.labelAmount.text = String(format: "%.2f", entry.amount) + " \(entryCurrency)"
-//            cell.labelAmount.text = formatNumber(amount: entry.amount, currencyTicker: entryCurrency)
-//            let (url, params) = Currency.getFXRateURLandParams(entryCurrency, to: Currency.baseCurrency, date: entryDate)
-//            print ("\(url) \n \(params)")
-//
-//            Alamofire.request(.GET, url, parameters: params).responseJSON { [weak self] response in
-//                if let value = response.result.value {
-//                    let json = JSON(value)
-//                    print(json)
-//                    let source = json["source"].string!
-//                    // let fxRate = json["quotes"]["\(source)\(Currency.baseCurrency)"].double!
-//                    let fromCurrency = json["quotes"]["\(source)\(entryCurrency)"].double!
-//                    let toCurrency = json["quotes"]["\(source)\(Currency.baseCurrency)"].double!
-//                    // cell.labelAmount.text = String(format: "%.2f", entry.amount * fxRate)
-//                    // cell.labelAmount.text = String(format: "%.2f", entry.amount / fromCurrency * toCurrency)
-//                    cell.labelAmount.text = self!.formatNumber(amount: entry.amount / fromCurrency * toCurrency, currencyTicker: Currency.baseCurrency)
-//                }
-//            }
-//        } else {
-//            // cell.labelAmount.text = String(format: "%.2f", entry.amount)
-//            cell.labelAmount.text = formatNumber(amount: entry.amount, currencyTicker: Currency.baseCurrency)
-//        }
     }
     
 

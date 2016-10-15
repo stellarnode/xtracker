@@ -38,6 +38,9 @@
 		075CD1D41DA6CDB8004B2A62 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712D33E1D8B2D5A00849704 /* Venue.swift */; };
 		075CD1D71DA6D506004B2A62 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1981D969F79004B2A62 /* Currency.swift */; };
 		075CD1D81DA6E539004B2A62 /* DatesCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */; };
+		0770DC101DAEA66900697C60 /* EntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770DC0F1DAEA66900697C60 /* EntryRow.swift */; };
+		0770DC121DAEAAFF00697C60 /* WatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770DC111DAEAAFF00697C60 /* WatchHelper.swift */; };
+		0770DC141DAEB34F00697C60 /* WatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0770DC131DAEB34F00697C60 /* WatchHelper.swift */; };
 		079084081D773A1E005BC86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079084071D773A1E005BC86F /* AppDelegate.swift */; };
 		0790840A1D773A1E005BC86F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079084091D773A1E005BC86F /* FirstViewController.swift */; };
 		0790840C1D773A1E005BC86F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790840B1D773A1E005BC86F /* SecondViewController.swift */; };
@@ -45,6 +48,28 @@
 		0790841C1D7753FA005BC86F /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790841B1D7753FA005BC86F /* NewEntryViewController.swift */; };
 		0790841E1D7AFB63005BC86F /* VenuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790841D1D7AFB63005BC86F /* VenuesViewController.swift */; };
 		079084201D7AFB85005BC86F /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0790841F1D7AFB85005BC86F /* CategoriesViewController.swift */; };
+		07B0C8AA1DAC028400DD3E0A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B0C8A91DAC028400DD3E0A /* CloudKit.framework */; };
+		07B0C8AC1DAC052700DD3E0A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C8AB1DAC052700DD3E0A /* Category.swift */; };
+		07B0C8B31DAC1DCA00DD3E0A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07B0C8B11DAC1DCA00DD3E0A /* Interface.storyboard */; };
+		07B0C8B51DAC1DCA00DD3E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B0C8B41DAC1DCA00DD3E0A /* Assets.xcassets */; };
+		07B0C8BC1DAC1DCA00DD3E0A /* TcehWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 07B0C8BB1DAC1DCA00DD3E0A /* TcehWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		07B0C8C31DAC1DCA00DD3E0A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C8C21DAC1DCA00DD3E0A /* InterfaceController.swift */; };
+		07B0C8C51DAC1DCA00DD3E0A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C8C41DAC1DCA00DD3E0A /* ExtensionDelegate.swift */; };
+		07B0C8C71DAC1DCA00DD3E0A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0C8C61DAC1DCA00DD3E0A /* NotificationController.swift */; };
+		07B0C8C91DAC1DCA00DD3E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07B0C8C81DAC1DCA00DD3E0A /* Assets.xcassets */; };
+		07B0C8CD1DAC1DCA00DD3E0A /* TcehWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 07B0C8AF1DAC1DCA00DD3E0A /* TcehWatch.app */; };
+		07CD17211DB2654600EF36F3 /* NewEntryInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17201DB2654600EF36F3 /* NewEntryInterfaceController.swift */; };
+		07CD17221DB268F300EF36F3 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1981D969F79004B2A62 /* Currency.swift */; };
+		07CD17231DB268FF00EF36F3 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073A40961D91AB7A007325B5 /* Categories.swift */; };
+		07CD17241DB2736700EF36F3 /* DatesCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */; };
+		07CD17261DB273C100EF36F3 /* HelperFunctions+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17251DB273C100EF36F3 /* HelperFunctions+Constants.swift */; };
+		07CD17281DB27AD000EF36F3 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17271DB27AD000EF36F3 /* Env.swift */; };
+		07CD17291DB27AD000EF36F3 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17271DB27AD000EF36F3 /* Env.swift */; };
+		07CD172A1DB27AD000EF36F3 /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17271DB27AD000EF36F3 /* Env.swift */; };
+		07CD172C1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */; };
+		07CD172D1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */; };
+		07CD172E1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */; };
+		0B4D7934D529DE537AD936A1 /* Pods_TcehWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FF6B3740165D37EF70F5E9 /* Pods_TcehWatch_Extension.framework */; };
 		13FE287466CC0CABE1F05FD7 /* Pods_TcehProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E33BE12B385DBE6A3228C206 /* Pods_TcehProject.framework */; };
 		4CAB63F3D4C601DE701E46F2 /* Pods_TcehWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E8C6C2A50E6A8FB82075FF /* Pods_TcehWidget.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +81,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 075CD1BE1DA6CA0C004B2A62;
 			remoteInfo = TcehWidget;
+		};
+		07B0C8BD1DAC1DCA00DD3E0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079083FC1D773A1E005BC86F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07B0C8BA1DAC1DCA00DD3E0A;
+			remoteInfo = "TcehWatch Extension";
+		};
+		07B0C8CB1DAC1DCA00DD3E0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 079083FC1D773A1E005BC86F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07B0C8AE1DAC1DCA00DD3E0A;
+			remoteInfo = TcehWatch;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -69,6 +108,28 @@
 				075CD1CB1DA6CA0C004B2A62 /* TcehWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07B0C8D11DAC1DCA00DD3E0A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				07B0C8BC1DAC1DCA00DD3E0A /* TcehWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07B0C8D51DAC1DCA00DD3E0A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				07B0C8CD1DAC1DCA00DD3E0A /* TcehWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -102,6 +163,9 @@
 		075CD1C81DA6CA0C004B2A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		075CD1D51DA6D2E3004B2A62 /* TcehProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TcehProject.entitlements; sourceTree = "<group>"; };
 		075CD1D61DA6D3B4004B2A62 /* TcehWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TcehWidget.entitlements; sourceTree = "<group>"; };
+		0770DC0F1DAEA66900697C60 /* EntryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryRow.swift; sourceTree = "<group>"; };
+		0770DC111DAEAAFF00697C60 /* WatchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchHelper.swift; sourceTree = "<group>"; };
+		0770DC131DAEB34F00697C60 /* WatchHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchHelper.swift; sourceTree = "<group>"; };
 		079084041D773A1E005BC86F /* TcehProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TcehProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079084071D773A1E005BC86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079084091D773A1E005BC86F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +175,28 @@
 		0790841B1D7753FA005BC86F /* NewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
 		0790841D1D7AFB63005BC86F /* VenuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenuesViewController.swift; sourceTree = "<group>"; };
 		0790841F1D7AFB85005BC86F /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		07B0C8A91DAC028400DD3E0A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		07B0C8AB1DAC052700DD3E0A /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		07B0C8AF1DAC1DCA00DD3E0A /* TcehWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TcehWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B0C8B21DAC1DCA00DD3E0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		07B0C8B41DAC1DCA00DD3E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07B0C8B61DAC1DCA00DD3E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B0C8BB1DAC1DCA00DD3E0A /* TcehWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TcehWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07B0C8C11DAC1DCA00DD3E0A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		07B0C8C21DAC1DCA00DD3E0A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		07B0C8C41DAC1DCA00DD3E0A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		07B0C8C61DAC1DCA00DD3E0A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		07B0C8C81DAC1DCA00DD3E0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		07B0C8CA1DAC1DCA00DD3E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07CD17201DB2654600EF36F3 /* NewEntryInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEntryInterfaceController.swift; sourceTree = "<group>"; };
+		07CD17251DB273C100EF36F3 /* HelperFunctions+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HelperFunctions+Constants.swift"; sourceTree = "<group>"; };
+		07CD17271DB27AD000EF36F3 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationHelper.swift; sourceTree = "<group>"; };
 		229C47FF4DD6AA5C18BA11D9 /* Pods-TcehProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TcehProject/Pods-TcehProject.release.xcconfig"; sourceTree = "<group>"; };
+		39FF6B3740165D37EF70F5E9 /* Pods_TcehWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TcehWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		889EB60E96F818EF69110CF0 /* Pods-TcehWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TcehWatch Extension/Pods-TcehWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		90D410B5986FCB70AA0C652C /* Pods_TcehWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TcehWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0301A5321A9C2BF98BDAB5 /* Pods-TcehWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TcehWatch Extension/Pods-TcehWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		C3E8C6C2A50E6A8FB82075FF /* Pods_TcehWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TcehWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E026F1D7975FB4C6AF0177B8 /* Pods-TcehProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TcehProject/Pods-TcehProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E33BE12B385DBE6A3228C206 /* Pods_TcehProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TcehProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +218,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				13FE287466CC0CABE1F05FD7 /* Pods_TcehProject.framework in Frameworks */,
+				07B0C8AA1DAC028400DD3E0A /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07B0C8B81DAC1DCA00DD3E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B4D7934D529DE537AD936A1 /* Pods_TcehWatch_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66FC699D5ABC2662465EE114 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +256,8 @@
 			children = (
 				079084061D773A1E005BC86F /* TcehProject */,
 				075CD1C21DA6CA0C004B2A62 /* TcehWidget */,
+				07B0C8B01DAC1DCA00DD3E0A /* TcehWatch */,
+				07B0C8BF1DAC1DCA00DD3E0A /* TcehWatch Extension */,
 				079084051D773A1E005BC86F /* Products */,
 				92915EC46FDC0A44E2AE7D91 /* Pods */,
 				D705A3A97609788FE540CAB3 /* Frameworks */,
@@ -166,6 +269,8 @@
 			children = (
 				079084041D773A1E005BC86F /* TcehProject.app */,
 				075CD1BF1DA6CA0C004B2A62 /* TcehWidget.appex */,
+				07B0C8AF1DAC1DCA00DD3E0A /* TcehWatch.app */,
+				07B0C8BB1DAC1DCA00DD3E0A /* TcehWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,37 +278,116 @@
 		079084061D773A1E005BC86F /* TcehProject */ = {
 			isa = PBXGroup;
 			children = (
-				075CD1D51DA6D2E3004B2A62 /* TcehProject.entitlements */,
+				07CD171C1DB21B7B00EF36F3 /* Model */,
+				07CD171D1DB21BA500EF36F3 /* View */,
+				07CD171B1DB21B3E00EF36F3 /* Controller */,
+				07CD171E1DB21BE100EF36F3 /* Helpers */,
+				07CD171F1DB21C1C00EF36F3 /* Resources */,
+			);
+			path = TcehProject;
+			sourceTree = "<group>";
+		};
+		07B0C8B01DAC1DCA00DD3E0A /* TcehWatch */ = {
+			isa = PBXGroup;
+			children = (
+				07B0C8B11DAC1DCA00DD3E0A /* Interface.storyboard */,
+				07B0C8B41DAC1DCA00DD3E0A /* Assets.xcassets */,
+				07B0C8B61DAC1DCA00DD3E0A /* Info.plist */,
+			);
+			path = TcehWatch;
+			sourceTree = "<group>";
+		};
+		07B0C8BF1DAC1DCA00DD3E0A /* TcehWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				07B0C8C21DAC1DCA00DD3E0A /* InterfaceController.swift */,
+				07CD17201DB2654600EF36F3 /* NewEntryInterfaceController.swift */,
+				0770DC0F1DAEA66900697C60 /* EntryRow.swift */,
+				0770DC131DAEB34F00697C60 /* WatchHelper.swift */,
+				07B0C8C41DAC1DCA00DD3E0A /* ExtensionDelegate.swift */,
+				07B0C8C61DAC1DCA00DD3E0A /* NotificationController.swift */,
+				07CD17251DB273C100EF36F3 /* HelperFunctions+Constants.swift */,
+				07B0C8C81DAC1DCA00DD3E0A /* Assets.xcassets */,
+				07B0C8CA1DAC1DCA00DD3E0A /* Info.plist */,
+				07B0C8C01DAC1DCA00DD3E0A /* Supporting Files */,
+			);
+			path = "TcehWatch Extension";
+			sourceTree = "<group>";
+		};
+		07B0C8C01DAC1DCA00DD3E0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07B0C8C11DAC1DCA00DD3E0A /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07CD171B1DB21B3E00EF36F3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				079084071D773A1E005BC86F /* AppDelegate.swift */,
 				079084091D773A1E005BC86F /* FirstViewController.swift */,
 				0790840B1D773A1E005BC86F /* SecondViewController.swift */,
-				075CD1B11D99A3EE004B2A62 /* Main.storyboard */,
-				079084101D773A1E005BC86F /* Assets.xcassets */,
-				079084151D773A1E005BC86F /* Info.plist */,
 				0790841B1D7753FA005BC86F /* NewEntryViewController.swift */,
 				0790841D1D7AFB63005BC86F /* VenuesViewController.swift */,
 				0790841F1D7AFB85005BC86F /* CategoriesViewController.swift */,
-				073818371D7DD8320003D155 /* CategoryCell.swift */,
-				073818391D7F30720003D155 /* VenueCell.swift */,
-				0738183B1D808F7E0003D155 /* Entry.swift */,
-				0738183D1D8093790003D155 /* EntryCell.swift */,
-				0738190D1D871D330003D155 /* Model.xcdatamodeld */,
-				073819101D8720970003D155 /* CoreDataHelper.swift */,
-				0712D33E1D8B2D5A00849704 /* Venue.swift */,
-				073A40961D91AB7A007325B5 /* Categories.swift */,
 				073A40981D91BD47007325B5 /* testTableViewController.swift */,
-				075CD1981D969F79004B2A62 /* Currency.swift */,
 				075CD19A1D96B166004B2A62 /* WelcomeViewController.swift */,
 				075CD19C1D97CD92004B2A62 /* EditEntryViewController.swift */,
 				075CD19E1D97D61F004B2A62 /* SelectCurrencyViewController.swift */,
 				075CD1A01D9813CC004B2A62 /* SelectDateViewController.swift */,
-				075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */,
-				075CD1A41D9986EC004B2A62 /* GraphView.swift */,
 				075CD1AC1D999FEF004B2A62 /* StatisticsViewController.swift */,
-				075CD1B51D9AE631004B2A62 /* PieChartViewMine.swift */,
 				075CD1B71D9D9A48004B2A62 /* TestChartViewController.swift */,
 			);
-			path = TcehProject;
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		07CD171C1DB21B7B00EF36F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0738183B1D808F7E0003D155 /* Entry.swift */,
+				0712D33E1D8B2D5A00849704 /* Venue.swift */,
+				07B0C8AB1DAC052700DD3E0A /* Category.swift */,
+				073A40961D91AB7A007325B5 /* Categories.swift */,
+				075CD1981D969F79004B2A62 /* Currency.swift */,
+				0738190D1D871D330003D155 /* Model.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		07CD171D1DB21BA500EF36F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				075CD1B11D99A3EE004B2A62 /* Main.storyboard */,
+				073818371D7DD8320003D155 /* CategoryCell.swift */,
+				073818391D7F30720003D155 /* VenueCell.swift */,
+				0738183D1D8093790003D155 /* EntryCell.swift */,
+				075CD1A41D9986EC004B2A62 /* GraphView.swift */,
+				075CD1B51D9AE631004B2A62 /* PieChartViewMine.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		07CD171E1DB21BE100EF36F3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				073819101D8720970003D155 /* CoreDataHelper.swift */,
+				075CD1A21D9827AD004B2A62 /* DatesCustomizer.swift */,
+				0770DC111DAEAAFF00697C60 /* WatchHelper.swift */,
+				07CD17271DB27AD000EF36F3 /* Env.swift */,
+				07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		07CD171F1DB21C1C00EF36F3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				075CD1D51DA6D2E3004B2A62 /* TcehProject.entitlements */,
+				079084101D773A1E005BC86F /* Assets.xcassets */,
+				079084151D773A1E005BC86F /* Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		92915EC46FDC0A44E2AE7D91 /* Pods */ = {
@@ -213,6 +397,8 @@
 				229C47FF4DD6AA5C18BA11D9 /* Pods-TcehProject.release.xcconfig */,
 				00B538CA4DC136D78A475C50 /* Pods-TcehWidget.debug.xcconfig */,
 				E968EF198F44B96A7C186E8E /* Pods-TcehWidget.release.xcconfig */,
+				BC0301A5321A9C2BF98BDAB5 /* Pods-TcehWatch Extension.debug.xcconfig */,
+				889EB60E96F818EF69110CF0 /* Pods-TcehWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -220,9 +406,12 @@
 		D705A3A97609788FE540CAB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07B0C8A91DAC028400DD3E0A /* CloudKit.framework */,
 				E33BE12B385DBE6A3228C206 /* Pods_TcehProject.framework */,
 				075CD1C01DA6CA0C004B2A62 /* NotificationCenter.framework */,
 				C3E8C6C2A50E6A8FB82075FF /* Pods_TcehWidget.framework */,
+				90D410B5986FCB70AA0C652C /* Pods_TcehWatch.framework */,
+				39FF6B3740165D37EF70F5E9 /* Pods_TcehWatch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -261,16 +450,56 @@
 				7AE3FBF2D96BED46958A5683 /* [CP] Embed Pods Frameworks */,
 				3C372FEAFD9DE530B0ACA20B /* [CP] Copy Pods Resources */,
 				075CD1CF1DA6CA0C004B2A62 /* Embed App Extensions */,
+				07B0C8D51DAC1DCA00DD3E0A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				075CD1CA1DA6CA0C004B2A62 /* PBXTargetDependency */,
+				07B0C8CC1DAC1DCA00DD3E0A /* PBXTargetDependency */,
 			);
 			name = TcehProject;
 			productName = TcehProject;
 			productReference = 079084041D773A1E005BC86F /* TcehProject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		07B0C8AE1DAC1DCA00DD3E0A /* TcehWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07B0C8D21DAC1DCA00DD3E0A /* Build configuration list for PBXNativeTarget "TcehWatch" */;
+			buildPhases = (
+				07B0C8AD1DAC1DCA00DD3E0A /* Resources */,
+				07B0C8D11DAC1DCA00DD3E0A /* Embed App Extensions */,
+				66FC699D5ABC2662465EE114 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07B0C8BE1DAC1DCA00DD3E0A /* PBXTargetDependency */,
+			);
+			name = TcehWatch;
+			productName = TcehWatch;
+			productReference = 07B0C8AF1DAC1DCA00DD3E0A /* TcehWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		07B0C8BA1DAC1DCA00DD3E0A /* TcehWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07B0C8CE1DAC1DCA00DD3E0A /* Build configuration list for PBXNativeTarget "TcehWatch Extension" */;
+			buildPhases = (
+				5B0069DE4296C2FD453D4F8D /* [CP] Check Pods Manifest.lock */,
+				07B0C8B71DAC1DCA00DD3E0A /* Sources */,
+				07B0C8B81DAC1DCA00DD3E0A /* Frameworks */,
+				07B0C8B91DAC1DCA00DD3E0A /* Resources */,
+				EE5D3791112C3AFB8A90F0B3 /* [CP] Embed Pods Frameworks */,
+				A733DDA69F52535ED53E5598 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TcehWatch Extension";
+			productName = "TcehWatch Extension";
+			productReference = 07B0C8BB1DAC1DCA00DD3E0A /* TcehWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -298,7 +527,17 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
+					};
+					07B0C8AE1DAC1DCA00DD3E0A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = GYBM9B57KB;
+					};
+					07B0C8BA1DAC1DCA00DD3E0A = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
 			};
@@ -318,6 +557,8 @@
 			targets = (
 				079084031D773A1E005BC86F /* TcehProject */,
 				075CD1BE1DA6CA0C004B2A62 /* TcehWidget */,
+				07B0C8AE1DAC1DCA00DD3E0A /* TcehWatch */,
+				07B0C8BA1DAC1DCA00DD3E0A /* TcehWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -337,6 +578,23 @@
 			files = (
 				075CD1B21D99A3EE004B2A62 /* Main.storyboard in Resources */,
 				079084111D773A1E005BC86F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07B0C8AD1DAC1DCA00DD3E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B0C8B51DAC1DCA00DD3E0A /* Assets.xcassets in Resources */,
+				07B0C8B31DAC1DCA00DD3E0A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07B0C8B91DAC1DCA00DD3E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B0C8C91DAC1DCA00DD3E0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +646,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TcehWidget/Pods-TcehWidget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5B0069DE4296C2FD453D4F8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		7AE3FBF2D96BED46958A5683 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,6 +706,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TcehWidget/Pods-TcehWidget-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A733DDA69F52535ED53E5598 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TcehWatch Extension/Pods-TcehWatch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE5D3791112C3AFB8A90F0B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TcehWatch Extension/Pods-TcehWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -441,8 +744,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				075CD1D31DA6CDB4004B2A62 /* CoreDataHelper.swift in Sources */,
+				07CD172D1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */,
 				075CD1D41DA6CDB8004B2A62 /* Venue.swift in Sources */,
 				075CD1D11DA6CDA3004B2A62 /* Entry.swift in Sources */,
+				07CD17291DB27AD000EF36F3 /* Env.swift in Sources */,
 				075CD1D01DA6CC90004B2A62 /* EntryCell.swift in Sources */,
 				075CD1C41DA6CA0C004B2A62 /* TodayViewController.swift in Sources */,
 				075CD1D71DA6D506004B2A62 /* Currency.swift in Sources */,
@@ -460,17 +765,21 @@
 				079084081D773A1E005BC86F /* AppDelegate.swift in Sources */,
 				075CD1A51D9986EC004B2A62 /* GraphView.swift in Sources */,
 				079084201D7AFB85005BC86F /* CategoriesViewController.swift in Sources */,
+				0770DC121DAEAAFF00697C60 /* WatchHelper.swift in Sources */,
 				075CD1991D969F79004B2A62 /* Currency.swift in Sources */,
 				075CD1B61D9AE631004B2A62 /* PieChartViewMine.swift in Sources */,
 				075CD19B1D96B166004B2A62 /* WelcomeViewController.swift in Sources */,
 				073818381D7DD8320003D155 /* CategoryCell.swift in Sources */,
+				07B0C8AC1DAC052700DD3E0A /* Category.swift in Sources */,
 				0790841C1D7753FA005BC86F /* NewEntryViewController.swift in Sources */,
 				0738183A1D7F30720003D155 /* VenueCell.swift in Sources */,
+				07CD17281DB27AD000EF36F3 /* Env.swift in Sources */,
 				073819111D8720970003D155 /* CoreDataHelper.swift in Sources */,
 				075CD1A11D9813CC004B2A62 /* SelectDateViewController.swift in Sources */,
 				075CD1B81D9D9A48004B2A62 /* TestChartViewController.swift in Sources */,
 				073A40991D91BD47007325B5 /* testTableViewController.swift in Sources */,
 				0738183E1D8093790003D155 /* EntryCell.swift in Sources */,
+				07CD172C1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */,
 				075CD1AD1D999FEF004B2A62 /* StatisticsViewController.swift in Sources */,
 				0738183C1D808F7E0003D155 /* Entry.swift in Sources */,
 				075CD19D1D97CD92004B2A62 /* EditEntryViewController.swift in Sources */,
@@ -483,6 +792,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		07B0C8B71DAC1DCA00DD3E0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07B0C8C71DAC1DCA00DD3E0A /* NotificationController.swift in Sources */,
+				07CD172E1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */,
+				07CD17231DB268FF00EF36F3 /* Categories.swift in Sources */,
+				07B0C8C51DAC1DCA00DD3E0A /* ExtensionDelegate.swift in Sources */,
+				07B0C8C31DAC1DCA00DD3E0A /* InterfaceController.swift in Sources */,
+				07CD17241DB2736700EF36F3 /* DatesCustomizer.swift in Sources */,
+				07CD17261DB273C100EF36F3 /* HelperFunctions+Constants.swift in Sources */,
+				07CD17211DB2654600EF36F3 /* NewEntryInterfaceController.swift in Sources */,
+				0770DC101DAEA66900697C60 /* EntryRow.swift in Sources */,
+				07CD17221DB268F300EF36F3 /* Currency.swift in Sources */,
+				0770DC141DAEB34F00697C60 /* WatchHelper.swift in Sources */,
+				07CD172A1DB27AD000EF36F3 /* Env.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -490,6 +818,16 @@
 			isa = PBXTargetDependency;
 			target = 075CD1BE1DA6CA0C004B2A62 /* TcehWidget */;
 			targetProxy = 075CD1C91DA6CA0C004B2A62 /* PBXContainerItemProxy */;
+		};
+		07B0C8BE1DAC1DCA00DD3E0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07B0C8BA1DAC1DCA00DD3E0A /* TcehWatch Extension */;
+			targetProxy = 07B0C8BD1DAC1DCA00DD3E0A /* PBXContainerItemProxy */;
+		};
+		07B0C8CC1DAC1DCA00DD3E0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07B0C8AE1DAC1DCA00DD3E0A /* TcehWatch */;
+			targetProxy = 07B0C8CB1DAC1DCA00DD3E0A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -500,6 +838,14 @@
 				075CD1C61DA6CA0C004B2A62 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		07B0C8B11DAC1DCA00DD3E0A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07B0C8B21DAC1DCA00DD3E0A /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -652,6 +998,72 @@
 			};
 			name = Release;
 		};
+		07B0C8CF1DAC1DCA00DD3E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC0301A5321A9C2BF98BDAB5 /* Pods-TcehWatch Extension.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "TcehWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		07B0C8D01DAC1DCA00DD3E0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 889EB60E96F818EF69110CF0 /* Pods-TcehWatch Extension.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = "TcehWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		07B0C8D31DAC1DCA00DD3E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = TcehWatch_Extension;
+				INFOPLIST_FILE = TcehWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		07B0C8D41DAC1DCA00DD3E0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = TcehWatch_Extension;
+				INFOPLIST_FILE = TcehWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tceh.app.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -678,6 +1090,24 @@
 			buildConfigurations = (
 				079084191D773A1E005BC86F /* Debug */,
 				0790841A1D773A1E005BC86F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07B0C8CE1DAC1DCA00DD3E0A /* Build configuration list for PBXNativeTarget "TcehWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07B0C8CF1DAC1DCA00DD3E0A /* Debug */,
+				07B0C8D01DAC1DCA00DD3E0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07B0C8D21DAC1DCA00DD3E0A /* Build configuration list for PBXNativeTarget "TcehWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07B0C8D31DAC1DCA00DD3E0A /* Debug */,
+				07B0C8D41DAC1DCA00DD3E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,16 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Tceh-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller title="Tceh" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TcehWatch" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="SZf-zN-fVr">
+                            <items>
+                                <tableRow identifier="EntryRow" id="H4J-mg-5xf" customClass="EntryRow" customModule="TcehWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Lsn-PG-uTx">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Transport" textAlignment="left" id="463-QN-YxC"/>
+                                            <label alignment="right" verticalAlignment="center" text="$100,000" textAlignment="right" id="pWx-Hb-ymf"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="labelAmount" destination="pWx-Hb-ymf" id="Rkl-I5-ZtG"/>
+                                        <outlet property="labelCategory" destination="463-QN-YxC" id="gGZ-Zr-eNE"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <menu key="menu" id="ejK-27-FKg">
+                        <items>
+                            <menuItem title="Add Entry" icon="add" id="9tV-i4-q3t">
+                                <connections>
+                                    <action selector="newEntryMenuItemTapped" destination="AgC-eL-Hgc" id="N50-10-DlI"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="tableEntries" destination="SZf-zN-fVr" id="c0b-Y9-z27"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--NewEntryInterfaceController-->
+        <scene sceneID="Qtd-aV-MIV">
+            <objects>
+                <controller identifier="NewEntryInterfaceController" id="LMx-7Z-9jT" customClass="NewEntryInterfaceController" customModule="TcehWatch_Extension">
+                    <items>
+                        <slider width="1" alignment="left" continuous="YES" maximum="1000" steps="200" id="gKS-kN-0XF">
+                            <connections>
+                                <action selector="amountSliderDidChange:" destination="LMx-7Z-9jT" id="6y7-B7-aFg"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" verticalAlignment="center" id="ZET-EH-Waw">
+                            <items>
+                                <label alignment="center" text="0.0" textAlignment="right" id="yDv-aC-ETu"/>
+                                <label alignment="right" verticalAlignment="center" text="USD" textAlignment="right" id="XPH-t1-KCX"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="QuF-Nw-aY7">
+                            <connections>
+                                <action selector="doneButtonClicked" destination="LMx-7Z-9jT" id="qbX-RT-bXy"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="amountLabel" destination="yDv-aC-ETu" id="NMJ-Zv-l3O"/>
+                        <outlet property="amountSlider" destination="gKS-kN-0XF" id="ziT-Ck-HS2"/>
+                        <outlet property="currencyLabel" destination="XPH-t1-KCX" id="6Di-Kq-qND"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +93,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="TcehWatch" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
