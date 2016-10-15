@@ -11,16 +11,13 @@ protocol NewEntryViewControllerDelegate {
 class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate,
     VenuesViewControllerDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate, SelectCurrencyViewControllerDelegate, SelectDateViewControllerDelegate {
 
-    @IBOutlet weak var textFieldAmount: UITextField!    
-    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textFieldAmount: UITextField!
     @IBOutlet weak var buttonCategory: UIButton!
-
     @IBOutlet weak var buttonVenue: UIButton!
-
     @IBOutlet weak var buttonDate: UIButton!
-    
     @IBOutlet weak var labelCurrency: UILabel!
-
 
     var selectedVenue: Venue?
     var selectedCategory: String?
@@ -31,16 +28,21 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
 
     var delegate: NewEntryViewControllerDelegate?
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboarDidShow(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: UIKeyboardDidHideNotification, object: nil)
 
         textFieldAmount.delegate = self
 
         textFieldAmount.text = ""
         textFieldAmount.placeholder = "000.00"
         textFieldAmount.becomeFirstResponder()
-
 
         labelCurrency.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.chooseCurrency))
@@ -52,6 +54,34 @@ class NewEntryViewController: UIViewController, CategoriesViewControllerDelegate
         buttonDate.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         buttonDate.titleLabel?.font = UIFont.systemFontOfSize(16, weight: UIFontWeightThin)
 
+    }
+
+    func keyboarDidShow(notification: NSNotification) {
+        let frame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue
+        let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
+
+        if let duration = duration, frame = frame?.CGRectValue() {
+
+            scrollViewBottomConstraint.constant = frame.height + 16
+            UIView.animateWithDuration(duration, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
+
+        let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height - scrollView.bounds.size.height)
+        scrollView.setContentOffset(bottomOffset, animated: true)
+    }
+
+    func keyboardDidHide(notification: NSNotification) {
+        let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
+
+        if let duration = duration {
+            scrollViewBottomConstraint.constant = 16
+
+            UIView.animateWithDuration(duration, animations: {
+                self.view.layoutIfNeeded()
+            })
+        }
     }
 
 

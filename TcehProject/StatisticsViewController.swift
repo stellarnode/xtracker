@@ -101,7 +101,7 @@ extension StatisticsViewController {
         let description = NSExpressionDescription()
         description.name = "categoryCount"
         description.expression = count
-        description.expressionResultType = .Integer32AttributeType
+        description.expressionResultType = .DoubleAttributeType
         let request = NSFetchRequest(entityName: "Entry")
         request.propertiesToGroupBy = ["category"]
         request.resultType = .DictionaryResultType
@@ -113,7 +113,7 @@ extension StatisticsViewController {
 
             var categories: [String] = []
             var values: [Double] = []
-            results.sortInPlace { $0["categoryCount"] as! Int > $1["categoryCount"] as! Int }
+            results.sortInPlace { $0["categoryCount"] as! Double > $1["categoryCount"] as! Double }
             for result in results {
                 categories.append(result["category"] as! String)
                 values.append(result["categoryCount"] as! Double)
