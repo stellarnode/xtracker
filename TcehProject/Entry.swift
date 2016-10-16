@@ -54,8 +54,27 @@ class Entry: NSManagedObject {
         } catch {
             return []
         }
+    }
 
+    class func loadPastTwoMonths() -> [Entry] {
+        let request = NSFetchRequest(entityName: "Entry")
 
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        components.month = -2
+
+        var startOfPastTwoMonths = calendar.dateByAddingComponents(components, toDate: NSDate(), options: [])
+        startOfPastTwoMonths = calendar.dateBySettingUnit(.Day, value: 1, ofDate: startOfPastTwoMonths!, options: [])
+        startOfPastTwoMonths = calendar.startOfDayForDate(startOfPastTwoMonths!)
+
+        request.predicate = NSPredicate(format: "date >= %@", argumentArray: [startOfPastTwoMonths!])
+
+        do {
+            let results = try CoreDataHelper.instance.context.executeFetchRequest(request)
+            return results as! [Entry]
+        } catch {
+            return []
+        }
     }
 
 }

@@ -13,6 +13,10 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var tableEntries: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
 
+    @IBOutlet weak var pastMonthAmount: UILabel!
+    @IBOutlet weak var currentMonthAmount: UILabel!
+
+
     var selectedEntry: Entry?
     var editEntryVC: EditEntryViewController?
 
@@ -22,6 +26,20 @@ class FirstViewController: UIViewController {
     let formatNumber = Currency.initializeNumberFormatter()
     var formatDate = DatesCustomizer.initializeFormatter()
 
+    var entriesForPastTwoMonths: [Entry] = []
+
+    var totalCurrentMonth = 0.0 {
+        didSet {
+            currentMonthAmount.text = formatNumber(amount: totalCurrentMonth, currencyTicker: Currency.baseCurrency)
+        }
+    }
+    var totalPastMonth = 0.0 {
+        didSet {
+            pastMonthAmount.text = formatNumber(amount: totalPastMonth, currencyTicker: Currency.baseCurrency)
+        }
+    }
+
+    let calendar = NSCalendar.currentCalendar()
 
     // MARK: Load views
 
@@ -38,7 +56,16 @@ class FirstViewController: UIViewController {
 
         refreshControl.addTarget(self, action: #selector(self.refreshEntries), forControlEvents: .ValueChanged)
         tableEntries.addSubview(refreshControl)
-        
+
+        // this is a test; the function in described in extension below
+        // groupByMonth()
+
+        entriesForPastTwoMonths = Entry.loadPastTwoMonths()
+        for entry in entriesForPastTwoMonths {
+            print("\(entry.date)")
+        }
+
+        updatePastTwoMonthsTotals(nil)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -46,6 +73,9 @@ class FirstViewController: UIViewController {
         if baseCurrency != Currency.baseCurrency {
             baseCurrency = Currency.baseCurrency
             tableEntries.reloadData()
+            totalCurrentMonth = 0.0
+            totalPastMonth = 0.0
+            updatePastTwoMonthsTotals(nil)
         }
     }
 
@@ -265,6 +295,7 @@ extension FirstViewController: NewEntryViewControllerDelegate, EditEntryViewCont
         do {
             try CoreDataHelper.instance.context.save()
             WatchHelper.instance.updateContext()
+            updatePastTwoMonthsTotals(entry)
         } catch {
             print("saving entry failed")
         }
@@ -278,6 +309,10 @@ extension FirstViewController: NewEntryViewControllerDelegate, EditEntryViewCont
 
         do {
             try CoreDataHelper.instance.context.save()
+            WatchHelper.instance.updateContext()
+            entriesForPastTwoMonths = []
+            entriesForPastTwoMonths = Entry.loadPastTwoMonths()
+            updatePastTwoMonthsTotals(nil)
         } catch {
             print("saving entry failed")
         }
@@ -288,6 +323,121 @@ extension FirstViewController: NewEntryViewControllerDelegate, EditEntryViewCont
 
 }
 
+
+// MARK: Calculate Current and Past Month Expenses
+
+extension FirstViewController {
+
+    func updatePastTwoMonthsTotals(entry: Entry?) {
+
+        let currentMonth = calendar.component([.Month], fromDate: NSDate())
+        let pastMonthDate = calendar.dateByAddingUnit(.Month, value: -1, toDate: NSDate(), options: [])
+        let pastMonth = calendar.component([.Month], fromDate: pastMonthDate!)
+
+        if let entry = entry {
+            let entryMonth = calendar.component([.Month], fromDate: entry.date!)
+            setRelevantMonthTotal(entryMonth, currentMonth: currentMonth, pastMonth: pastMonth, entry: entry)
+        } else {
+            for preloadedEntry in entriesForPastTwoMonths {
+                let entryMonth = calendar.component([.Month], fromDate: preloadedEntry.date!)
+                setRelevantMonthTotal(entryMonth, currentMonth: currentMonth, pastMonth: pastMonth, entry: preloadedEntry)
+            }
+        }
+    }
+
+
+    func setRelevantMonthTotal(entryMonth: Int, currentMonth: Int, pastMonth: Int, entry: Entry) {
+        switch entryMonth {
+        case currentMonth:
+            if entry.currency == Currency.baseCurrency {
+                totalCurrentMonth += entry.amount
+            } else {
+                convertToBaseCurrency(entry, whenCompleted: { [weak self] (convertedAmount) in
+                    self!.totalCurrentMonth += convertedAmount
+                    })
+            }
+        case pastMonth:
+            if entry.currency == Currency.baseCurrency {
+                totalPastMonth += entry.amount
+            } else {
+                convertToBaseCurrency(entry, whenCompleted: { [weak self] (convertedAmount) in
+                    self!.totalPastMonth += convertedAmount
+                    })
+            }
+        default:
+            break
+        }
+    }
+
+
+    func convertToBaseCurrency(entry: Entry, whenCompleted: (convertedAmount: Double) -> ()) {
+
+        let (url, params) = Currency.getFXRateURLandParams(entry.currency!, to: Currency.baseCurrency, date: entry.date!)
+        print ("\(url) \n \(params)")
+
+        Alamofire.request(.GET, url, parameters: params).responseJSON { response in
+            if let value = response.result.value {
+                let json = JSON(value)
+                print(json)
+                let source = json["source"].string!
+                // let fxRate = json["quotes"]["\(source)\(Currency.baseCurrency)"].double!
+                let fromCurrency = json["quotes"]["\(source)\(entry.currency!)"].double!
+                let toCurrency = json["quotes"]["\(source)\(Currency.baseCurrency)"].double!
+                // cell.labelAmount.text = String(format: "%.2f", entry.amount * fxRate)
+                // cell.labelAmount.text = String(format: "%.2f", entry.amount / fromCurrency * toCurrency)
+                whenCompleted(convertedAmount: entry.amount / fromCurrency * toCurrency)
+            }
+        }
+    }
+
+
+    // TODO: Current implemenation sums up by month withou converting original currency into base currency. Need to correct.
+//    private func groupByMonth() {
+//        let sumArgument = NSExpression(forKeyPath: "amount")
+//        let sum = NSExpression(forFunction: "sum:", arguments: [sumArgument])
+//
+//        let description = NSExpressionDescription()
+//        description.expression = sum
+//        description.name = "sumByMonth"
+//        description.expressionResultType = .DoubleAttributeType
+//
+//        let request = NSFetchRequest(entityName: "Entry")
+//        request.propertiesToGroupBy = ["date"]
+//        request.resultType = .DictionaryResultType
+//        request.propertiesToFetch = ["date", description]
+//
+//        do {
+//            let results = try CoreDataHelper.instance.context.executeFetchRequest(request) as! [[String: AnyObject]]
+//
+//            let mappedResults = results.map { (result: [String: AnyObject]) -> [String: AnyObject] in
+//                var convertedResult = result
+//                convertedResult["date"] = (convertedResult["date"] as! NSDate).getMonthAndYearOnly()
+//                return convertedResult
+//            }
+//
+//            let out: [NSDate: AnyObject] = [:]
+//            let reducedResults = mappedResults.reduce(out, combine: { (previous, current: [String: AnyObject]) -> [NSDate: AnyObject] in
+//                let date = current["date"] as! NSDate
+//                var next = previous
+//
+//                if next[date] != nil {
+//                    next[date] = (next[date] as! Double) + (current["sumByMonth"] as! Double)
+//                } else {
+//                    next[date] = current["sumByMonth"] as! Double
+//                }
+//
+//                return next
+//            })
+//
+//            print(reducedResults)
+//
+//
+//        } catch let error {
+//            print("could not load sums of amounts by month due to error: \(error)")
+//        }
+//    }
+
+}
 
 
 

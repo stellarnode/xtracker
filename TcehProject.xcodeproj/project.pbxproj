@@ -69,6 +69,9 @@
 		07CD172C1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */; };
 		07CD172D1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */; };
 		07CD172E1DB27CEB00EF36F3 /* CoreLocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */; };
+		07CD17331DB2C00900EF36F3 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17321DB2C00900EF36F3 /* NSDate+Extension.swift */; };
+		07CD17351DB3738100EF36F3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17341DB3738100EF36F3 /* Constants.swift */; };
+		07CD17371DB3827200EF36F3 /* UIView+MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CD17361DB3827200EF36F3 /* UIView+MaterialView.swift */; };
 		0B4D7934D529DE537AD936A1 /* Pods_TcehWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FF6B3740165D37EF70F5E9 /* Pods_TcehWatch_Extension.framework */; };
 		13FE287466CC0CABE1F05FD7 /* Pods_TcehProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E33BE12B385DBE6A3228C206 /* Pods_TcehProject.framework */; };
 		4CAB63F3D4C601DE701E46F2 /* Pods_TcehWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E8C6C2A50E6A8FB82075FF /* Pods_TcehWidget.framework */; };
@@ -192,6 +195,9 @@
 		07CD17251DB273C100EF36F3 /* HelperFunctions+Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HelperFunctions+Constants.swift"; sourceTree = "<group>"; };
 		07CD17271DB27AD000EF36F3 /* Env.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
 		07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationHelper.swift; sourceTree = "<group>"; };
+		07CD17321DB2C00900EF36F3 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		07CD17341DB3738100EF36F3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		07CD17361DB3827200EF36F3 /* UIView+MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+MaterialView.swift"; sourceTree = "<group>"; };
 		229C47FF4DD6AA5C18BA11D9 /* Pods-TcehProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TcehProject/Pods-TcehProject.release.xcconfig"; sourceTree = "<group>"; };
 		39FF6B3740165D37EF70F5E9 /* Pods_TcehWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TcehWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		889EB60E96F818EF69110CF0 /* Pods-TcehWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TcehWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TcehWatch Extension/Pods-TcehWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -377,6 +383,7 @@
 				0770DC111DAEAAFF00697C60 /* WatchHelper.swift */,
 				07CD17271DB27AD000EF36F3 /* Env.swift */,
 				07CD172B1DB27CEB00EF36F3 /* CoreLocationHelper.swift */,
+				07CD17341DB3738100EF36F3 /* Constants.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -394,6 +401,8 @@
 		07CD172F1DB2A34C00EF36F3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				07CD17321DB2C00900EF36F3 /* NSDate+Extension.swift */,
+				07CD17361DB3827200EF36F3 /* UIView+MaterialView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -770,12 +779,14 @@
 			files = (
 				0790840C1D773A1E005BC86F /* SecondViewController.swift in Sources */,
 				073A40971D91AB7A007325B5 /* Categories.swift in Sources */,
+				07CD17371DB3827200EF36F3 /* UIView+MaterialView.swift in Sources */,
 				079084081D773A1E005BC86F /* AppDelegate.swift in Sources */,
 				075CD1A51D9986EC004B2A62 /* GraphView.swift in Sources */,
 				079084201D7AFB85005BC86F /* CategoriesViewController.swift in Sources */,
 				0770DC121DAEAAFF00697C60 /* WatchHelper.swift in Sources */,
 				075CD1991D969F79004B2A62 /* Currency.swift in Sources */,
 				075CD1B61D9AE631004B2A62 /* PieChartViewMine.swift in Sources */,
+				07CD17351DB3738100EF36F3 /* Constants.swift in Sources */,
 				075CD19B1D96B166004B2A62 /* WelcomeViewController.swift in Sources */,
 				073818381D7DD8320003D155 /* CategoryCell.swift in Sources */,
 				07B0C8AC1DAC052700DD3E0A /* Category.swift in Sources */,
@@ -792,6 +803,7 @@
 				0738183C1D808F7E0003D155 /* Entry.swift in Sources */,
 				075CD19D1D97CD92004B2A62 /* EditEntryViewController.swift in Sources */,
 				0790841E1D7AFB63005BC86F /* VenuesViewController.swift in Sources */,
+				07CD17331DB2C00900EF36F3 /* NSDate+Extension.swift in Sources */,
 				075CD1A31D9827AD004B2A62 /* DatesCustomizer.swift in Sources */,
 				0738190F1D871D330003D155 /* Model.xcdatamodeld in Sources */,
 				075CD19F1D97D61F004B2A62 /* SelectCurrencyViewController.swift in Sources */,

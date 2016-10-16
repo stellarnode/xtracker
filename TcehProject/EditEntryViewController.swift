@@ -27,6 +27,10 @@ class EditEntryViewController: UIViewController, SelectDateViewControllerDelegat
         super.viewDidLoad()
         labelAmount.text = formatNumber(amount: entry!.amount, currencyTicker: entry!.currency!)
         labelDate.text = formatDate(date: entry!.date!)
+
+        // the following is a test string; can be safely deleted
+        entry!.date!.getMonthAndYearOnly()
+
         labelCategory.text = entry!.category
 
         let iconURL = NSURL(string: entry!.venue.icon)

@@ -40,35 +40,27 @@ class Currency {
     private static let apiKey = Env.CurrencyLayerApiKey
 
     static var baseCurrency = "RUB" {
-
         didSet {
             Defaults[.baseCurrency] = Currency.baseCurrency
         }
-
     }
 
 
     static var baseCurrencyFullNameIndex: Int {
-
         var index = 0
-
         for (idx, currency) in Currency.manager.list.enumerate() {
-
             if currency.hasPrefix(Currency.baseCurrency) {
                 index = idx
             }
         }
-
         return index
     }
 
 
     static var userDefined = false {
-
         didSet {
             Defaults[.userDefined] = Currency.userDefined
         }
-
     }
 
     static let manager = Currency()
@@ -114,45 +106,33 @@ class Currency {
         }
 
         return performFormatting
-
     }
 
 
     static func loadCurrencies() {
 
         let url = Currency.apiEndpoint + "list"
-
         let params = [
             "access_key": Currency.apiKey
         ]
-
         var currencies = [String]()
 
         Alamofire.request(.GET, url, parameters: params).responseJSON { response in
 
             if let value = response.result.value {
-
                 let json = JSON(value)
-
                 let jsonCurrencies = json["currencies"].dictionaryValue
-
                 for (ticker, _) in jsonCurrencies {
                     currencies.append(ticker + ": " + (jsonCurrencies[ticker]!.string)!)
                 }
-
                 if currencies.count == 0 {
                     currencies.append("ERR: Error fetching currency list")
                 }
-
                 let currenciesSorted = currencies.sort()
-
                 Currency.manager.list = currenciesSorted
                 Defaults[.currencyList] = currenciesSorted
-
             }
-
         }
-
     }
 
 
@@ -166,7 +146,6 @@ class Currency {
 
         print(dateString)
 
-
         let url = Currency.apiEndpoint + "historical"
 
         let params = [
@@ -177,9 +156,7 @@ class Currency {
         ]
 
         return (url, params)
-
     }
-
 
 
 }
